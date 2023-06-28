@@ -19,3 +19,21 @@ $(document).ready(function() {
     }
   });
 });
+
+// Mengambil referensi elemen toggle dan menu navbar
+const hamburgerToggle = document.querySelector('.navbar-toggler');
+const navbarMenu = document.querySelector('.navbar-collapse');
+
+// Event listener untuk menutup hamburger menu ketika diklik di luar menu
+document.addEventListener('click', function(event) {
+  const targetElement = event.target;
+
+  // Cek apakah target element di luar menu navbar
+  if (!navbarMenu.contains(targetElement) && !hamburgerToggle.contains(targetElement)) {
+    // Menutup hamburger menu
+    if (navbarMenu.classList.contains('show')) {
+      navbarMenu.classList.remove('show');
+      hamburgerToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+});

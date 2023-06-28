@@ -1,12 +1,24 @@
 #floating-navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  
+    top: 10px;
+    left: 10px;
+    right: 10px;
     transition: top 0.3s ease-in-out;
-    border-radius: 10px;
+    border-radius: 25px;
     overflow: visible;
+  }
+  
+  body {
+    margin-top: 100px;
+  }
+  
+  @media (max-width: 991px) {
+    .form-switch {
+      display: flex;
+    }
+    body {
+      margin-top: 80px;
+    }
   }
   
   body.dark-mode {
@@ -39,6 +51,28 @@
   
   .navbar-dark .navbar-toggler-icon {
     filter: invert(1);
+  }
+  
+  /* Warna menu hovering pada mode terang */
+  .navbar-light .nav-container:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Warna menu hovering pada mode gelap */
+  .navbar-dark .nav-container:hover {
+    background-color: #3f4449;
+  } 
+  
+  .nav-container {
+    padding: 10px;
+  }
+  
+  .nav-container:hover {
+    background-color: #eee;
+  }
+  
+  .nav-item .active .nav-container {
+    background-color: #ddd;
   }
   
   .form-check-label {
